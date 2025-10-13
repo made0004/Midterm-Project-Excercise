@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Film Feast - MAD9013 Midterm</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trajan+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="page-body">
+
+    <header class="page-header">
+        <h1 class="page-header__title">Fantasy Cinema</h1>
+    </header>
+
+    <nav class="sort-nav">
+        <form class="sort-form" id="sort-form">
+            
+            <label for="sort-field" class="sort-form__label">Choose a field to sort by</label>
+            
+            <select id="sort-field" class="sort-form__select">
+                <option value="" class="sort-form__option">Choose a field</option>
+                <option value="title" class="sort-form__option">Card Title</option>
+                <option value="director" class="sort-form__option">Director</option>
+                <option value="year" class="sort-form__option">Famous Year</option>
+            </select>
+            
+            <button type="submit" id="sort-button" class="sort-form__button">Sort</button>
+
+        </form>
+    </nav>
+
+    <main class="page-main">
+        
+        <p class="page-main__instruction-text">
+            Use the form above to sort the cards based on the selected field. Click on any of the card headers to remove it from the page. The full set of cards will return when the page is reset.
+        </p>
+        
+        <section class="card-grid" id="card-display"></section>
+
+    </main>
+
+    <footer class="page-footer">
+        <p class="page-footer__text">&copy; 2025 MAD9014 MID TERM PROJECT</p>
+    </footer>
+    
+    <script src="/js/data.js"></script> 
+
+</body>
+</html>
