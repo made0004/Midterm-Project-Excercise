@@ -1,218 +1,219 @@
-CSS Reset
-Adapted from: https://piccalil.li/blog/a-more-modern-css-reset/
-*/
+@layer reset, layout, components;
 
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Prevent font size inflation */
-html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-  line-height: 1.5;
-}
-
-/* Remove default margin in favour of better control in authored CSS */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-figure,
-blockquote,
-ol,
-ul,
-dl,
-dd {
-  margin: 0 0 1.5rem;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
-}
-
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  margin: 0;
-}
-
-/* Set shorter line heights on headings and interactive elements */
-h1,
-h2,
-h3,
-h4,
-button,
-input,
-label {
-  line-height: 1.1;
-}
-
-/* Balance text wrapping on headings */
-h1,
-h2,
-h3,
-h4 {
-  text-wrap: balance;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-  color: #36bf7f;
-}
-
-a:not([class]):hover,
-a:not([class]):focus-visible {
-  color: #d96666;
-}
-
-/* Make images easier to work with */
-img,
-picture,
-svg {
-  max-width: 100%;
-  display: block;
-}
-
-svg {
-  fill: currentColor;
-}
-
-svg:not(:root) {
-  overflow: hidden;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font-family: inherit;
-  font-size: inherit;
-}
-
-/* Update default button cursor to indicate interactivity */
-button {
-  cursor: pointer;
-}
-
-/* Make sure textareas without a rows attribute are not tiny */
-textarea:not([rows]) {
-  min-height: 10rem;
-}
-
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-  scroll-margin-block: 3rem;
-}
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
+@layer reset {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+    box-sizing: border-box;
   }
-} 
 
-/* Add more from here typically following in this order  */
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    line-height: 1.5;
+  }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  figure,
+  blockquote,
+  ol,
+  ul,
+  dl,
+  dd {
+    margin: 0 0 1.5rem;
+  }
 
-::before,
-::after {
-  box-sizing: border-box;
-}
+  ul[role='list'],
+  ol[role='list'] {
+    list-style: none;
+  }
 
-:root {
-    --color-black: #1A1A1A;          /* 1. Near Black (Background) */
-    --color-white: #F0F0F0;          /* 2. Near White (Text) */
-    --color-grey: #555555;           /* 3. Medium Grey (Footer/Nav BG) */
-    --color-pale-violet: #BE8CFF;    /* 4. Accent 1 (Card Border) */
-    --color-lavender: #C7A2FF;       /* 5. Accent 2 (Select Border/Text Accent) */
-    --color-gold: gold;           /* 6. Accent 3 (Header/Button BG/Strong Text) */
-    --font-family-primary: 'Trajan Sans Pro', sans-serif; 
-}
+  body {
+    min-height: 100vh;
+    margin: 0;
+  }
 
-/* Global & Body Styles */
-* {
+  h1,
+  h2,
+  h3,
+  h4,
+  button,
+  input,
+  label {
+    line-height: 1.1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: #36bf7f;
+  }
+
+  a:not([class]):hover,
+  a:not([class]):focus-visible {
+    color: #d96666;
+  }
+
+  img,
+  picture,
+  svg {
+    max-width: 100%;
+    display: block;
+  }
+
+  svg {
+    fill: currentColor;
+  }
+
+  svg:not(:root) {
+    overflow: hidden;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  textarea:not([rows]) {
+    min-height: 10rem;
+  }
+
+  :target {
+    scroll-margin-block: 3rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+  }
 }
 
-/* page-body style */
-.page-body {
+@layer layout {
+  :root {
+    --color-black: #1A1A1A;
+    --color-white: #F0F0F0;
+    --color-grey: #555555;
+    --color-pale-violet: #BE8CFF;
+    --color-lavender: #C7A2FF;
+    --color-gold: gold;
+    --font-family-primary: 'Cinzel', sans-serif;
+  }
+
+  .page-body {
     background-color: var(--color-black);
     color: var(--color-white);
     font-family: var(--font-family-primary); 
-    
-    /* STICKY FOOTER SETUP */
-    display: flex; 
+    display: flex;
     flex-direction: column;
-    min-height: 100vh; 
-  
-    padding-bottom: 0;  /* footer no padding */
-}
+    min-height: 100vh;
+    padding-bottom: 4rem; 
+  }
 
-/*  page-header */
-.page-header {
-    /* Header background is GOLD */
-    background-color: var(--color-gold); 
-    color: var(--color-black); 
-    padding: 1rem; 
+  .page-header {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    padding: 1rem;
     text-align: center;
-}
-.page-header__title {
+  }
+  .page-header__title {
     text-transform: uppercase;
     font-size: 1.8rem;
-    color: var(--color-black); 
+    color: var(--color-black);
     font-weight: 700;
-}
-/* --- Nav & Form Styles --- */
-.sort-nav {
+  }
+
+  .page-main {
+    flex-grow: 1;
+    padding: 1.5rem;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .page-footer {
+    position: fixed;
+    bottom: 0;
     background-color: var(--color-grey);
-    padding: 0.75rem; 
+    color: var(--color-white);
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    z-index: 1000;
+  }
+}
+
+@layer components {
+  
+  .sort-nav {
+    background-color: var(--color-grey);
+    padding: 0.75rem;
     display: flex;
     justify-content: center;
-    /* Border is GOLD */
-    border-bottom: 5px solid var(--color-gold); 
-    margin-top: -10px; 
-}
+    border-bottom: 5px solid var(--color-gold);
+    margin-top: -10px;
+  }
 
-/* sort-form */
-.sort-form {
+  .sort-form {
     display: flex;
-    gap: 1rem; 
+    gap: 1rem;
     align-items: center;
     max-width: 90%;
-}
+  }
 
-/* sort-form__label */
-.sort-form__label {
+  .sort-form__label {
     color: var(--color-white);
     font-size: 1rem;
     font-weight: 400;
-}
+  }
 
-/* sort-form__select and sort-form__button */
-.sort-form__select, .sort-form__button {
+  .sort-form__select, .sort-form__button {
     padding: 0.5rem 1rem;
     border: 2px solid var(--color-lavender);
     border-radius: 5px;
@@ -221,45 +222,27 @@ textarea:not([rows]) {
     background-color: var(--color-black);
     color: var(--color-white);
     font-weight: 700;
-}
+  }
 
-.sort-form__button {
+  .sort-form__button {
     cursor: pointer;
-    background-color: var(--color-gold); 
+    background-color: var(--color-gold);
     color: var(--color-black);
     text-transform: uppercase;
-}
-.sort-form__button:hover {
+  }
+  .sort-form__button:hover {
     background-color: var(--color-lavender);
     color: var(--color-black);
-}
+  }
 
-/* flex on Main  */
-.page-main {
-    flex-grow: 1; 
-    padding: 1.5rem; 
-    max-width: 1200px;
-    width: 90%;
-    margin: 0 auto;
-}
-
-/* instruction-text */
-.page-main__instruction-text {
+  .page-main__instruction-text {
     text-align:center;
     margin-bottom: 2rem;
     font-size: 1.1rem;
     color: var(--color-lavender);
-}
+  }
 
-/* card-grid */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 15px; 
-}
-
-/*  movie-card */
-.movie-card {
+  .movie-card {
     border: 3px solid var(--color-pale-violet);
     border-radius: 8px;
     overflow: hidden;
@@ -267,55 +250,40 @@ textarea:not([rows]) {
     transition: transform 0.2s;
     cursor: pointer;
     background-color: var(--color-black);
-}
+  }
 
-/* Element: movie-card__header */
-.movie-card__header {
-    background-color: var(--color-gold); 
+  .movie-card__header {
+    background-color: var(--color-gold);
     color: var(--color-black);
-    padding: 0.7rem; 
+    padding: 0.7rem;
     text-align: center;
-    cursor: pointer; 
-}
+    cursor: pointer;
+  }
 
-/*  movie-card__title */
-.movie-card__title {
-    font-size: 1.1rem; 
-    color: var(--color-black); 
+  .movie-card__title {
+    font-size: 1.1rem;
+    color: var(--color-black);
     margin: 0;
-}
+  }
 
-/*  movie-card__image with no padding to keep image small and to load faster as it is a randomized query picture fom placeholder .io  */
-.movie-card__image {
+  .movie-card__image {
     width: 100%;
     height: auto;
     display: block;
     border-bottom: 2px solid var(--color-lavender);
-}
+  }
 
-/*  movie-card__fields slight padding to keep card size small and compact */
-.movie-card__fields {
+  .movie-card__fields {
     padding: 1rem;
-}
+  }
 
-/* movie-card__detail - slight padding while considering card size   */
-.movie-card__detail {
+  .movie-card__detail {
     font-family: var(--font-family-primary);
     margin-bottom: 0.3rem;
     font-size: 0.95rem;
-}
+  }
 
-/* gold to convey fantasy theme and properties   */
-.movie-card__detail strong {
+  .movie-card__detail strong {
     color: gold;
-}
-
-/* Footer styles */
-.page-footer {
-    position: static;  /*  and set to stick to bottom */ 
-    background-color: var(--color-grey);
-    color: var(--color-white);
-    padding: 1rem; 
-    text-align: center;
-    width: 100%;
+  }
 }
